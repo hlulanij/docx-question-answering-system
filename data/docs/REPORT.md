@@ -40,6 +40,25 @@ Microsoft Word documents are loaded using the `docx-rs` crate and converted into
 Tokenization is performed using the `tokenizers` library, converting text into token IDs suitable for model input. The dataset is batched and split into training and validation subsets to allow performance evaluation during training.
 
 ---
+2.4 Code Walkthrough
 
-### 2.3 Training Strategy
+The system is organized into clearly separated modules:
+
+1. **Document Processing (`src/docx`)**  
+   Responsible for loading and extracting text from `.docx` files.
+
+2. **Data Pipeline (`src/data_pipeline` and `src/nlp`)**  
+   Handles tokenization, batching, and dataset preparation using the Burn Dataset trait.
+
+3. **Model (`src/model`)**  
+   Implements a transformer-based Question Answering model with token embeddings, positional embeddings, and multiple transformer encoder layers.
+
+4. **Training (`src/train`)**  
+   Contains the training loop, loss calculation, backpropagation, checkpoint saving, and configuration management.
+
+5. **Inference (`src/inference`)**  
+   Loads trained model checkpoints and answers user questions through a command-line interface.
+
+This modular structure improves maintainability, testability, and clarity of the system.
+
 
