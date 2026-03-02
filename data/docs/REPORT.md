@@ -1,59 +1,45 @@
 # SEG 580S Assignment 1
 ## Question Answering System using Rust and Burn
 
-**Student:** Hlulani Mathebula
+**Student Name:** Hlulani Mathebula  
+**Course:** SEG 580S – Software Engineering Deep Learning Systems  
+**Framework:** Burn (Rust)
 
 ---
 
 ## 1. Introduction
-This project implements a Question Answering (Q&A) system that reads Microsoft Word (.docx) documents and answers natural language questions about their content. The system is developed in Rust using the Burn deep learning framework.
 
-The objective is to demonstrate an end-to-end deep learning pipeline including data processing, model training, and inference.
+This project implements a Question Answering (Q&A) system that reads Microsoft Word (.docx) documents and answers natural language questions about their content. The motivation for this project is to demonstrate the design and implementation of a complete deep learning system using Rust and the Burn framework.
+
+The system is designed to process real-world document data, train a transformer-based neural network, and provide answers via a command-line interface. This assignment focuses on the full machine learning lifecycle, including data preparation, model architecture, training, and inference.
+
+Key design decisions include the use of a transformer encoder architecture, modular system design, and strict adherence to the Burn framework and required dependency versions.
 
 ---
 
 ## 2. Implementation
 
 ### 2.1 Architecture Details
-The system consists of the following components:
-- DOCX document loader
-- Tokenization and batching pipeline
-- Transformer-based Question Answering model
-- Training pipeline
-- Command-line inference interface
 
-The neural network architecture is based on a transformer encoder with token and positional embeddings.
+The system architecture consists of the following major components:
+
+- **Document Loader**: Extracts raw text from `.docx` files
+- **Data Pipeline**: Tokenizes text, batches samples, and creates training/validation splits
+- **Model**: Transformer-based Question Answering network
+- **Training Pipeline**: Handles loss computation, backpropagation, and checkpointing
+- **Inference System**: Loads trained models and answers user questions via CLI
+
+The neural network architecture is based on a transformer encoder with token embeddings, positional embeddings, and a stack of six transformer layers, followed by an output projection layer for answer prediction.
 
 ---
 
 ### 2.2 Data Pipeline
-Word documents are loaded using the `docx-rs` crate and converted into plain text. The extracted text is tokenized and prepared for training using batching and dataset splitting.
+
+Microsoft Word documents are loaded using the `docx-rs` crate and converted into plain text. The extracted text is cleaned and segmented into training examples.
+
+Tokenization is performed using the `tokenizers` library, converting text into token IDs suitable for model input. The dataset is batched and split into training and validation subsets to allow performance evaluation during training.
 
 ---
 
 ### 2.3 Training Strategy
-The model is trained using gradient-based optimization with configurable hyperparameters such as learning rate, batch size, and number of epochs. Training metrics such as loss are tracked during training.
 
----
-
-## 3. Experiments and Results
-
-### 3.1 Training Results
-Training and validation loss values are monitored to evaluate convergence.
-
----
-
-### 3.2 Model Performance
-Example questions and answers include:
-- What is the month and date of the 2026 End of Year Graduation Ceremony?
-- How many times did the HDC hold meetings in 2024?
-
-System strengths, weaknesses, and failure cases are discussed.
-
----
-
-## 4. Conclusion
-This project demonstrates the construction of a transformer-based Question Answering system in Rust. Challenges included managing model configuration and training complexity.
-
-Future work includes improving model accuracy, scaling to larger datasets, and optimizing inference performance.
-``
