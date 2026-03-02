@@ -1,0 +1,15 @@
+# Rust build output
+/target
+*/.rs.bk
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data (recommended for this project)
+data/raw/
+data/processed/
