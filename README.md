@@ -29,3 +29,12 @@ This project was developed for **SEG 580S – Software Engineering Deep Learning
 cargo build
 cargo run -- train
 cargo run -- ask --question "Your question here"
+
+
+## Assignment Coverage
+This repository satisfies the required components of SEG 580S Assignment 1, including:
+- DOCX data processing
+- Transformer-based model architecture
+- Training pipeline design
+- Command-line inference interface
+- Full project report in Markdown
