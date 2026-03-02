@@ -61,4 +61,8 @@ The system is organized into clearly separated modules:
 
 This modular structure improves maintainability, testability, and clarity of the system.
 
+### Limitations and Future Work
 
+The current system is limited by the size of the available dataset and the maximum context length supported by the model. Training time is also constrained by hardware resources.
+
+Future work includes expanding the dataset, improving answer span detection, experimenting with larger transformer models, and optimizing inference performance.
