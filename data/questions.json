@@ -6,5 +6,18 @@
   {
     "question": "How many times did the HDC hold meetings in 2024?",
     "answer": "Four times"
+  },
+  {
+    "question": "Which committee held meetings in 2024?",
+    "answer": "The Higher Diploma Committee (HDC)"
+  },
+  {
+    "question": "In which months were HDC meetings held?",
+    "answer": "March, June, September, and November"
+  },
+  {
+    "question": "What type of ceremony is held every December?",
+    "answer": "The End of Year Graduation Ceremony"
   }
 ]
+``
